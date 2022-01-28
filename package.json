@@ -1,11 +1,17 @@
 {
-  "name": "test-vue-components",
-  "version": "0.1.0",
-  "private": true,
+  "name": "@zultan/test-vue-components",
+  "version": "0.0.1",
+  "private": false,
+  "repository": "github.com:arkmadj/test-vue-components",
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "build": "npm run build:wc & npm run build:lib",
+    "lint": "vue-cli-service lint",
+    "build:lib": "vue-cli-service build --target lib --name test-vue-components 'src/main.js'",
+    "build:wc": "vue-cli-service build --target wc --name test-vue-components 'src/components/*.vue'",
+    "main": "dist/test-vue-components.common.js",
+    "unpkg": "dist/test-vue-components.min.js"
+    
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -18,7 +24,9 @@
     "@vue/compiler-sfc": "^3.0.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
-    "eslint-plugin-vue": "^7.0.0"
+    "eslint-plugin-vue": "^7.0.0",
+    "node-sass": "^7.0.1",
+    "sass-loader": "^10.0.5"
   },
   "eslintConfig": {
     "root": true,

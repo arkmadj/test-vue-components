@@ -1,4 +1,5 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import AppBadge from "./components/app-badge/AppBadge.vue";
 
-createApp(App).mount('#app')
+export default {
+  AppBadge
+}
